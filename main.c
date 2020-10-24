@@ -1,9 +1,17 @@
+#include <stdlib.h>
 void	ft_putchar(char ch);
-int	ft_putstr(char *s);
+short	ft_putstr(char *s);
+#include <stdio.h>
+
+typedef struct		s_list
+{
+	void		*data; // rdi [rdi]
+	struct s_list 	*next; // [rdi + 8]
+}			t_list;
 
 int	main(void)
 {
 	ft_putchar('A');
-	ft_putstr("Hello world\n");
+	printf("%ld\n", ft_putstr("Hello world\n"));
 	return (0);
 }
